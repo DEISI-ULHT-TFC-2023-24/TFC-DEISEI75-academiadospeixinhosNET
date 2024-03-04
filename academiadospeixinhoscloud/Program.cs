@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using academiadospeixinhoscloud.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<academiadospeixinhoscloudContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("academiadospeixinhoscloudContext") ?? throw new InvalidOperationException("Connection string 'academiadospeixinhoscloudContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
