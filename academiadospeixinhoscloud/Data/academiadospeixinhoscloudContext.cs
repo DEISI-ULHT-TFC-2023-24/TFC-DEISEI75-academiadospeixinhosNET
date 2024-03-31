@@ -9,11 +9,23 @@ namespace academiadospeixinhoscloud.Data
 {
     public class academiadospeixinhoscloudContext : DbContext
     {
+       
         public academiadospeixinhoscloudContext (DbContextOptions<academiadospeixinhoscloudContext> options)
             : base(options)
         {
         }
 
-        public DbSet<academiadospeixinhoscloud.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<academiadospeixinhoscloud.Models.Atividade> Atividade { get; set; } = default!;
+        public DbSet<academiadospeixinhoscloud.Models.Crianca> Crianca { get; set; } = default!;
+        public DbSet<academiadospeixinhoscloud.Models.Pai> Pai { get; set; } = default!;
+        public DbSet<academiadospeixinhoscloud.Models.Subscricao> Subscricao { get; set; } = default!;
+        public DbSet<academiadospeixinhoscloud.Models.Produto> Produto { get; set; } = default!;
+        public DbSet<academiadospeixinhoscloud.Models.Sala> Sala { get; set; } = default!;
+        public DbSet<academiadospeixinhoscloud.Models.Evento> Evento { get; set; } = default!;
+        public DbSet<academiadospeixinhoscloud.Models.Ementa> Ementa { get; set; } = default!;
+
+
+
+
     }
 }

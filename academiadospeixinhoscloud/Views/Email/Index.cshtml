@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Selected Cars</title>
+</head>
+<body>
+    <label for="cars">Selected:</label>
+    @foreach (var item in ViewBag.Selected)
+    {
+        <h1>@item</h1>
+    }
+
+    <label for="cars">Selected Email:</label>
+    @foreach (var item in ViewBag.SelectedEmail)
+    {
+        <h1>@item</h1>
+    }
+    <form action="/Email/Select" method="post">
+        <div class="form-group">
+            <select name="Crianca" id="Crianca" asp-items="ViewBag.Crianca" class="custom-select mt-5 pt-3 " multiple></select>
+        </div>
+        <div class="form-group">
+            <select name="Pai" id="Pai" asp-items="ViewBag.Pai" class="custom-select mt-5 pt-3 " multiple></select>
+        </div>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿@model academiadospeixinhoscloud.Models.Sala
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Sala</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VagasPreenchidas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VagasPreenchidas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VagasTotal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VagasTotal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Educadora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Educadora)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Auxiliar1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Auxiliar1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Auxiliar2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Auxiliar2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Auxiliar3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Auxiliar3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomesSubscricoes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomesSubscricoes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

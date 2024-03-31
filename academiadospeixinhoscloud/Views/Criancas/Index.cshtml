@@ -1,0 +1,143 @@
+﻿@model IEnumerable<academiadospeixinhoscloud.Models.Crianca>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NIS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroUtente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeguroSaude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apolice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seguradora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoradaFiscal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nacionalidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeAgregado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autorizados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doencas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NBI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidadeBI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomesAtividades)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomesPais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomesSubscricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomesProduto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NIS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroUtente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeguroSaude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apolice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seguradora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoradaFiscal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nacionalidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeAgregado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autorizados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doencas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NBI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidadeBI)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomesAtividades)
+                </td>
+            <td>
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomesPais)
+                </td>
+            <td>
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomesSubscricao)
+                </td>
+            <td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomesProduto)
+            </td>
+                <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using academiadospeixinhoscloud.Data;
 
@@ -11,9 +12,11 @@ using academiadospeixinhoscloud.Data;
 namespace academiadospeixinhoscloud.Migrations
 {
     [DbContext(typeof(academiadospeixinhoscloudContext))]
-    partial class academiadospeixinhoscloudContextModelSnapshot : ModelSnapshot
+    [Migration("20240320134416_fix_db")]
+    partial class fix_db
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
