@@ -1,0 +1,73 @@
+﻿@model IEnumerable<academiadospeixinhoscloud.Models.Crianca>
+
+@{
+    ViewData["Title"] = "Lista de Crianças";
+}
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Lista de Crianças</h1>
+    <div class="text-right mb-3">
+        <a asp-action="Create" class="btn btn-success">Criar Nova</a>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                <th>@Html.DisplayNameFor(model => model.DataNascimento)</th>
+                <th>@Html.DisplayNameFor(model => model.NIS)</th>
+                <th>@Html.DisplayNameFor(model => model.NumeroUtente)</th>
+                <th>@Html.DisplayNameFor(model => model.SeguroSaude)</th>
+                <th>@Html.DisplayNameFor(model => model.Apolice)</th>
+                <th>@Html.DisplayNameFor(model => model.Seguradora)</th>
+                <th>@Html.DisplayNameFor(model => model.MoradaFiscal)</th>
+                <th>@Html.DisplayNameFor(model => model.Nacionalidade)</th>
+                <th>@Html.DisplayNameFor(model => model.QuantidadeAgregado)</th>
+                <th>@Html.DisplayNameFor(model => model.Autorizados)</th>
+                <th>@Html.DisplayNameFor(model => model.Doencas)</th>
+                <th>@Html.DisplayNameFor(model => model.NBI)</th>
+                <th>@Html.DisplayNameFor(model => model.ValidadeBI)</th>
+                <th>@Html.DisplayNameFor(model => model.NomesAtividades)</th>
+                <th>@Html.DisplayNameFor(model => model.NomesPais)</th>
+                <th>@Html.DisplayNameFor(model => model.NomesSubscricao)</th>
+                <th>@Html.DisplayNameFor(model => model.NomesProduto)</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DataNascimento)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NIS)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NumeroUtente)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SeguroSaude)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Apolice)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Seguradora)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MoradaFiscal)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nacionalidade)</td>
+                    <td>@Html.DisplayFor(modelItem => item.QuantidadeAgregado)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Autorizados)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Doencas)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NBI)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ValidadeBI)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NomesAtividades)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NomesPais)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NomesSubscricao)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NomesProduto)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Detalhes</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

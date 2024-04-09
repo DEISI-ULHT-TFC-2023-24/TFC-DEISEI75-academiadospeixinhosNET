@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Selected Cars</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+«    <div>
+        <label for="selectedCars">Selected:</label>
+        @foreach (var item in ViewBag.Selected)
+        {
+            <h3 class="mt-2">@item</h3>
+        }
+    </div>
+
+    <div>
+        <label for="selectedEmail">Selected Email:</label>
+        @foreach (var item in ViewBag.SelectedEmail)
+        {
+            <h3 class="mt-2">@item</h3>
+        }
+    </div>
+
+«    <form action="/Email/Select" method="post">
+        <div class="form-group">
+            <label for="Crianca">Criança</label>
+            <select name="Crianca" id="Crianca" class="custom-select mt-3" multiple asp-items="ViewBag.Crianca"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="Pai">Pai</label>
+            <select name="Pai" id="Pai" class="custom-select mt-3" multiple asp-items="ViewBag.Pai"></select>
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary mt-3">
+    </form>
+
+«    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

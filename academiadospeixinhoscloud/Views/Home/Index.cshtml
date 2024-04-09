@@ -1,8 +1,78 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia dos Peixinhos Cloud</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-image {
+            background: url('/path/to/your/image.jpg') center center no-repeat;
+            background-size: cover;
+            height: 75vh;
+            color: #fff;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Academia dos Peixinhos Cloud</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="hero-image">
+        <div class="overlay d-flex justify-content-center align-items-center">
+            <div class="text-center">
+                <h1 class="display-4">Bem-vindo à Academia dos Peixinhos Cloud</h1>
+                <p class="lead">Fomentando o desenvolvimento integral das crianças através da educação e do brincar.</p>
+                <a href="#" class="btn btn-primary btn-lg">Conheça Nossos Cursos</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <!-- Sobre Nós -->
+        <section class="my-5">
+            <h2>Sobre Nós</h2>
+            <p>Descrição breve da academia...</p>
+        </section>
+        <!--Eventos -->
+        <section class="my-5">
+            <h2>Eventos</h2>
+            <!-- eventos aqui -->
+        </section>
+
+        <!-- fotos?????? -->
+        <section class="my-5">
+            <h2>Galeria</h2>
+            <!-- fotos aqui -->
+        </section>
+
+        <!-- Contato e Localização -->
+        <section class="my-5">
+            <h2>Contato</h2>
+            <!-- Informações aqui -->
+        </section>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Academia dos Peixinhos Cloud
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
