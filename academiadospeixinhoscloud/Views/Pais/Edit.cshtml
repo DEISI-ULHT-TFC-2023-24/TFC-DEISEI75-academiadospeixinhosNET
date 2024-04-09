@@ -1,82 +1,74 @@
 ﻿@model academiadospeixinhoscloud.Models.Pai
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Pai";
 }
 
-<h1>Edit</h1>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-<h4>Pai</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataNascimento" class="control-label"></label>
-                <input asp-for="DataNascimento" class="form-control" />
-                <span asp-validation-for="DataNascimento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NIS" class="control-label"></label>
-                <input asp-for="NIS" class="form-control" />
-                <span asp-validation-for="NIS" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NumeroUtente" class="control-label"></label>
-                <input asp-for="NumeroUtente" class="form-control" />
-                <span asp-validation-for="NumeroUtente" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MoradaFiscal" class="control-label"></label>
-                <input asp-for="MoradaFiscal" class="form-control" />
-                <span asp-validation-for="MoradaFiscal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NBI" class="control-label"></label>
-                <input asp-for="NBI" class="form-control" />
-                <span asp-validation-for="NBI" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValidadeBI" class="control-label"></label>
-                <input asp-for="ValidadeBI" class="form-control" />
-                <span asp-validation-for="ValidadeBI" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Telefone1" class="control-label"></label>
-                <input asp-for="Telefone1" class="form-control" />
-                <span asp-validation-for="Telefone1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Telefone2" class="control-label"></label>
-                <input asp-for="Telefone2" class="form-control" />
-                <span asp-validation-for="Telefone2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <select asp-for="NomesCriancas" asp-items="ViewBag.Criancas" class="custom-select mt-5 pt-3 " multiple></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container mt-5">
+    <h1>Editar Pai</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label">Nome</label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DataNascimento" class="control-label">Data de Nascimento</label>
+                    <input asp-for="DataNascimento" type="date" class="form-control" />
+                    <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="NIS" class="control-label">NIS</label>
+                    <input asp-for="NIS" class="form-control" />
+                    <span asp-validation-for="NIS" class="text-danger"></span>
+                </div>
+
+                <!-- Repetir-->
+                <div class="form-group">
+                    <label asp-for="Telefone1" class="control-label">Telefone 1</label>
+                    <input asp-for="Telefone1" class="form-control" />
+                    <span asp-validation-for="Telefone1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Telefone2" class="control-label">Telefone 2</label>
+                    <input asp-for="Telefone2" class="form-control" />
+                    <span asp-validation-for="Telefone2" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="NomesCriancas" class="control-label">Nomes das Crianças</label>
+                    <input asp-for="NomesCriancas" class="form-control" />
+                    <span asp-validation-for="NomesCriancas" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Voltar à Lista</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,102 +1,70 @@
 ﻿@model academiadospeixinhoscloud.Models.Crianca
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes da Criança";
 }
 
-<h1>Details</h1>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
 
-<div>
-    <h4>Crianca</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataNascimento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataNascimento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NIS)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NIS)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumeroUtente)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NumeroUtente)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SeguroSaude)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SeguroSaude)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Apolice)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Apolice)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Seguradora)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Seguradora)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MoradaFiscal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MoradaFiscal)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nacionalidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nacionalidade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.QuantidadeAgregado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.QuantidadeAgregado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Autorizados)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Autorizados)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Doencas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Doencas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NBI)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NBI)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValidadeBI)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValidadeBI)
-        </dd>
-    </dl>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Detalhes da Criança</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Nome:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Nome)</dd>
+
+                        <dt class="col-sm-4">Data de Nascimento:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.DataNascimento)</dd>
+
+                        <dt class="col-sm-4">NIS:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.NIS)</dd>
+
+                        <dt class="col-sm-4">Número de Utente:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.NumeroUtente)</dd>
+
+                        <dt class="col-sm-4">Seguro Saúde:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.SeguroSaude)</dd>
+
+                        <dt class="col-sm-4">Apólice:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Apolice)</dd>
+
+                        <dt class="col-sm-4">Seguradora:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Seguradora)</dd>
+
+                        <dt class="col-sm-4">Morada Fiscal:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.MoradaFiscal)</dd>
+
+                        <dt class="col-sm-4">Nacionalidade:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Nacionalidade)</dd>
+
+                        <dt class="col-sm-4">Quantidade do Agregado:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.QuantidadeAgregado)</dd>
+
+                        <dt class="col-sm-4">Autorizados:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Autorizados)</dd>
+
+                        <dt class="col-sm-4">Doenças:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Doencas)</dd>
+
+                        <dt class="col-sm-4">NBI:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.NBI)</dd>
+
+                        <dt class="col-sm-4">Validade do BI:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ValidadeBI)</dd>
+                    </dl>
+                </div>
+                <div class="card-footer text-right">
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+                    <a asp-action="Index" class="btn btn-secondary">Voltar à Lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

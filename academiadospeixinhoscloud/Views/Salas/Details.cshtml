@@ -1,72 +1,42 @@
 ﻿@model academiadospeixinhoscloud.Models.Sala
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes da Sala";
 }
 
-<h1>Details</h1>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-<div>
-    <h4>Sala</h4>
+<div class="container mt-5">
+    <h1>Detalhes da Sala</h1>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.VagasPreenchidas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.VagasPreenchidas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.VagasTotal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.VagasTotal)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Educadora)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Educadora)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Auxiliar1)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Auxiliar1)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Auxiliar2)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Auxiliar2)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Auxiliar3)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Auxiliar3)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NomesSubscricoes)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NomesSubscricoes)
-        </dd>
+        <dt class="col-sm-4">Nome:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Nome)</dd>
+
+        <dt class="col-sm-4">Descrição:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Descricao)</dd>
+
+        <dt class="col-sm-4">Vagas Preenchidas:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.VagasPreenchidas)</dd>
+
+        <dt class="col-sm-4">Vagas Total:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.VagasTotal)</dd>
+
+        <dt class="col-sm-4">Educadora:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Educadora)</dd>
+
+        <!-- Continua para os auxiliares e subscrições -->
+
     </dl>
-</div>
+    <div class="text-right mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Voltar à Lista</a>
+    </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,71 +1,68 @@
 ﻿@model academiadospeixinhoscloud.Models.Sala
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar Sala";
 }
 
-<h1>Create</h1>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-<h4>Sala</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="VagasPreenchidas" class="control-label"></label>
-                <input asp-for="VagasPreenchidas" class="form-control" />
-                <span asp-validation-for="VagasPreenchidas" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="VagasTotal" class="control-label"></label>
-                <input asp-for="VagasTotal" class="form-control" />
-                <span asp-validation-for="VagasTotal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Educadora" class="control-label"></label>
-                <input asp-for="Educadora" class="form-control" />
-                <span asp-validation-for="Educadora" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Auxiliar1" class="control-label"></label>
-                <input asp-for="Auxiliar1" class="form-control" />
-                <span asp-validation-for="Auxiliar1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Auxiliar2" class="control-label"></label>
-                <input asp-for="Auxiliar2" class="form-control" />
-                <span asp-validation-for="Auxiliar2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Auxiliar3" class="control-label"></label>
-                <input asp-for="Auxiliar3" class="form-control" />
-                <span asp-validation-for="Auxiliar3" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <select asp-for="NomesSubscricoes" asp-items="ViewBag.Subscricoes" class="custom-select mt-5 pt-3 " multiple></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container mt-5">
+    <h1>Criar Sala</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label">Nome</label>
+                    <input asp-for="Nome" class="form-control" placeholder="Nome da sala" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Descricao" class="control-label">Descrição</label>
+                    <input asp-for="Descricao" class="form-control" placeholder="Descrição da sala" />
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="VagasPreenchidas" class="control-label">Vagas Preenchidas</label>
+                    <input asp-for="VagasPreenchidas" type="number" class="form-control" placeholder="Número de vagas preenchidas" />
+                    <span asp-validation-for="VagasPreenchidas" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="VagasTotal" class="control-label">Vagas Total</label>
+                    <input asp-for="VagasTotal" type="number" class="form-control" placeholder="Número total de vagas" />
+                    <span asp-validation-for="VagasTotal" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="NomesSubscricoes" class="control-label">Subscrições</label>
+                    <select asp-for="NomesSubscricoes" asp-items="ViewBag.Subscricoes" class="custom-select" multiple>
+                    </select>
+                </div>
+
+                <div class="form-group text-right">
+                    <input type="submit" value="Criar" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Voltar à Lista</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
