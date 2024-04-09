@@ -57,6 +57,8 @@ namespace academiadospeixinhoscloud.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Data,Preco,Professor,Index,NomesSalas")] Evento evento)
         {
+            ViewBag.Salas = new SelectList(_context.Sala, "Nome", "Nome");
+
             if (ModelState.IsValid)
             {
                 _context.Add(evento);
@@ -69,6 +71,8 @@ namespace academiadospeixinhoscloud.Controllers
         // GET: Eventoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.Salas = new SelectList(_context.Sala, "Nome", "Nome");
+
             if (id == null)
             {
                 return NotFound();
@@ -89,6 +93,8 @@ namespace academiadospeixinhoscloud.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao,Data,Preco,Professor,Index,NomesSalas")] Evento evento)
         {
+            ViewBag.Salas = new SelectList(_context.Sala, "Nome", "Nome");
+
             if (id != evento.Id)
             {
                 return NotFound();

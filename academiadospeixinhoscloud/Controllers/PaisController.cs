@@ -69,6 +69,7 @@ namespace academiadospeixinhoscloud.Controllers
         // GET: Pais/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.Criancas = new SelectList(_context.Crianca, "Nome", "Nome");
             if (id == null)
             {
                 return NotFound();

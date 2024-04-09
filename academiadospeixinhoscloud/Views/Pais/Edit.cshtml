@@ -64,9 +64,7 @@
                 <span asp-validation-for="Telefone2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NomesCriancas" class="control-label"></label>
-                <input asp-for="NomesCriancas" class="form-control" />
-                <span asp-validation-for="NomesCriancas" class="text-danger"></span>
+                <select asp-for="NomesCriancas" asp-items="ViewBag.Criancas" class="custom-select mt-5 pt-3 " multiple></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

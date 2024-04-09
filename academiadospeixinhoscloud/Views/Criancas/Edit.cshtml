@@ -83,8 +83,17 @@
                 <input asp-for="ValidadeBI" class="form-control" />
                 <span asp-validation-for="ValidadeBI" class="text-danger"></span>
             </div>
-            <div>
-                <select asp-for="Atividades" asp-items="ViewBag.Categories" class="custom-select mt-5 pt-3 "></select>
+            <div class="form-group">
+                <select asp-for="NomesAtividades" asp-items="ViewBag.Atividade" class="custom-select mt-5 pt-3 " multiple></select>
+            </div>
+            <div class="form-group">
+                <select asp-for="NomesPais" asp-items="ViewBag.Pai" class="custom-select mt-5 pt-3 " multiple></select>
+            </div>
+            <div class="form-group">
+                <select asp-for="NomesSubscricao" asp-items="ViewBag.Subscricao" class="custom-select mt-5 pt-3 " multiple></select>
+            </div>
+            <div class="form-group">
+                <select asp-for="NomesProduto" asp-items="ViewBag.Produto" class="custom-select mt-5 pt-3 " multiple></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

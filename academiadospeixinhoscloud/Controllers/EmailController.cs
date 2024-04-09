@@ -19,10 +19,11 @@ namespace academiadospeixinhoscloud.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.Crianca = new SelectList(_context.Crianca, "Nome", "Nome");
-            ViewBag.Atividade = new SelectList(_context.Atividade, "Nome", "Nome");
             ViewBag.Pai = new SelectList(_context.Pai, "Nome", "Nome");
+            ViewBag.Atividade = new SelectList(_context.Atividade, "Nome", "Nome");
             ViewBag.Subscricao = new SelectList(_context.Subscricao, "Nome", "Nome");
-            ViewBag.Produto = new SelectList(_context.Produto, "Nome", "Nome");
+
+            ViewBag.Sala = new SelectList(_context.Sala, "Nome", "Nome");
 
             List<string> selectedList = new List<string>();
             ViewBag.Selected = selectedList;
@@ -34,12 +35,12 @@ namespace academiadospeixinhoscloud.Controllers
         }
 
         [HttpPost]
-        public ActionResult Select(IEnumerable<string> Crianca, IEnumerable<string> Pai)
+        public ActionResult Select(IEnumerable<string> Crianca, IEnumerable<string> Pai, IEnumerable<string> Atividade, IEnumerable<string> Subscricao, IEnumerable<string> Sala)
         {
             List<string> selectedEmailList = new List<string>();
 
             
-
+            var criancas = _context.Crianca.ToList();
             List<string> selectedCriancaList = new List<string>();
             foreach (var item in Crianca)
             {
@@ -52,6 +53,27 @@ namespace academiadospeixinhoscloud.Controllers
             {
 
                 selectedPaiList.Add(item);
+            }
+
+            List<string> selectedAtividadeList = new List<string>();
+            foreach (var item in Atividade)
+            {
+
+                selectedAtividadeList.Add(item);
+            }
+
+            List<string> selectedSubscricaoList = new List<string>();
+            foreach (var item in Subscricao)
+            {
+
+                selectedSubscricaoList.Add(item);
+            }
+
+            List<string> selectedSalaList = new List<string>();
+            foreach (var item in Sala)
+            {
+
+                selectedSalaList.Add(item);
             }
 
 
@@ -91,19 +113,149 @@ namespace academiadospeixinhoscloud.Controllers
                         }
                     }
                 }
-
             }
 
+            
+            var atividades = _context.Atividade.ToList();
+            foreach (Atividade atividade in atividades)
+            {
+                if (atividade != null) { 
+                    if (selectedAtividadeList.Contains(atividade.Nome)){
+                        foreach (Crianca crianca in criancas)
+                        {
+                            if (crianca != null)
+                            {
+                                foreach (string nomeAtividade in crianca.NomesAtividades)
+                                {
+                                    if (atividade.Nome == nomeAtividade)
+                                    {
+                                        foreach (string nomePai in crianca.NomesPais)
+                                        {
+                                            foreach (Pai pai in pais)
+                                            {
+                                                if (pai.Nome == nomePai)
+                                                {
+                                                    if (!selectedEmailList.Contains(pai.Email))
+                                                    {
+                                                        selectedEmailList.Add(pai.Email);
+                                                    }
+                                                }
+
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            var subscricaos = _context.Subscricao.ToList();
+            foreach (Subscricao subscricao in subscricaos)
+            {
+                if (subscricao != null)
+                {
+                    if (selectedSubscricaoList.Contains(subscricao.Nome))
+                    {
+                        foreach (Crianca crianca in criancas)
+                        {
+                            if (crianca != null)
+                            {
+                                foreach (string nomeSubscricao in crianca.NomesSubscricao)
+                                {
+                                    if (subscricao.Nome == nomeSubscricao)
+                                    {
+                                        foreach (string nomePai in crianca.NomesPais)
+                                        {
+                                            foreach (Pai pai in pais)
+                                            {
+                                                if (pai.Nome == nomePai)
+                                                {
+                                                    if (!selectedEmailList.Contains(pai.Email))
+                                                    {
+                                                        selectedEmailList.Add(pai.Email);
+                                                    }
+                                                }
+
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            var salas = _context.Sala.ToList();
+            foreach (Sala sala in salas) 
+            {  
+                if (sala != null)
+                {
+                    if (selectedSalaList.Contains(sala.Nome)) 
+                    {
+                        foreach (Subscricao subscricao in subscricaos)
+                        {
+                            if (subscricao != null)
+                            {
+                                if (subscricao.NomesSalas.Contains(sala.Nome))
+                                {
+                                    foreach (Crianca crianca in criancas)
+                                    {
+                                        if (crianca != null)
+                                        {
+                                            foreach (string nomeSubscricao in crianca.NomesSubscricao)
+                                            {
+                                                if (subscricao.Nome == nomeSubscricao)
+                                                {
+                                                    foreach (string nomePai in crianca.NomesPais)
+                                                    {
+                                                        foreach (Pai pai in pais)
+                                                        {
+                                                            if (pai.Nome == nomePai)
+                                                            {
+                                                                if (!selectedEmailList.Contains(pai.Email))
+                                                                {
+                                                                    selectedEmailList.Add(pai.Email);
+                                                                }
+                                                            }
+
+                                                        }
+                                                    }
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+                    
+            }
 
 
             ViewBag.Selected = selectedPaiList.Concat(selectedCriancaList).ToArray();
             ViewBag.SelectedEmail = selectedEmailList.ToArray();
 
+            string multipleEmailsToSend = "";
+            foreach(var item in selectedEmailList)
+            {
+                multipleEmailsToSend += item + ",";
+            }
+
+            ViewBag.multipleEmailsToSend = multipleEmailsToSend;
             ViewBag.Crianca = new SelectList(_context.Crianca, "Nome", "Nome");
             ViewBag.Atividade = new SelectList(_context.Atividade, "Nome", "Nome");
             ViewBag.Pai = new SelectList(_context.Pai, "Nome", "Nome");
             ViewBag.Subscricao = new SelectList(_context.Subscricao, "Nome", "Nome");
-            ViewBag.Produto = new SelectList(_context.Produto, "Nome", "Nome");
+            ViewBag.Sala = new SelectList(_context.Sala, "Nome", "Nome");
 
             return View("Index");
         }

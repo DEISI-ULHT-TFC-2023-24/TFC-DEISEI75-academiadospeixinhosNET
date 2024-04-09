@@ -73,6 +73,11 @@ namespace academiadospeixinhoscloud.Controllers
         // GET: Criancas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.Atividade = new SelectList(_context.Atividade, "Nome", "Nome");
+            ViewBag.Pai = new SelectList(_context.Pai, "Nome", "Nome");
+            ViewBag.Subscricao = new SelectList(_context.Subscricao, "Nome", "Nome");
+            ViewBag.Produto = new SelectList(_context.Produto, "Nome", "Nome");
+
             if (id == null)
             {
                 return NotFound();
@@ -91,7 +96,7 @@ namespace academiadospeixinhoscloud.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DataNascimento,NIS,NumeroUtente,SeguroSaude,Apolice,Seguradora,MoradaFiscal,Nacionalidade,QuantidadeAgregado,Autorizados,Doencas,NBI,ValidadeBI")] Crianca crianca)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DataNascimento,NIS,NumeroUtente,SeguroSaude,Apolice,Seguradora,MoradaFiscal,Nacionalidade,QuantidadeAgregado,Autorizados,Doencas,NBI,ValidadeBI,NomesAtividades,NomesPais,NomesSubscricao,NomesProduto")] Crianca crianca)
         {
             if (id != crianca.Id)
             {

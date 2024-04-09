@@ -54,9 +54,7 @@
                 <span asp-validation-for="Auxiliar3" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NomesSubscricoes" class="control-label"></label>
-                <input asp-for="NomesSubscricoes" class="form-control" />
-                <span asp-validation-for="NomesSubscricoes" class="text-danger"></span>
+                <select asp-for="NomesSubscricoes" asp-items="ViewBag.Subscricoes" class="custom-select mt-5 pt-3 " multiple></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
