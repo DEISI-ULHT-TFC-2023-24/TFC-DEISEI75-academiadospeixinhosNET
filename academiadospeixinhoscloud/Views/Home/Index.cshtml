@@ -3,71 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia dos Peixinhos Cloud</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .hero-image {
-            background: url('/path/to/your/image.jpg') center center no-repeat;
+        .back-img {
+            width: 100%;
+            height: 40vh;
+            background-image: url('../Shared/background.png'); 
             background-size: cover;
-            height: 75vh;
-            color: #fff;
+            background-position: center;
+            position: relative; 
         }
 
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.5);
-            height: 100%;
+        .logo {
+            height: 100px; 
+            width: auto;
+            position: absolute; 
+            top: 0;
+            left: 0;
+        }
+
+        .footer-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top:20px;
+        }
+
+        .inscription-button {
+            margin-top: 20px;
+            margin-bottom: 50px;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Academia dos Peixinhos Cloud</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+    <div class="full-width-image">
+        <img src="~/css/logo.png" alt="Logo" class="logo">
+    </div>
 
-    <div class="hero-image">
-        <div class="overlay d-flex justify-content-center align-items-center">
-            <div class="text-center">
-                <h1 class="display-4">Bem-vindo à Academia dos Peixinhos Cloud</h1>
-                <p class="lead">Fomentando o desenvolvimento integral das crianças através da educação e do brincar.</p>
-                <a href="#" class="btn btn-primary btn-lg">Conheça Nossos Cursos</a>
+    <div class="back-img">
+        <img src="~/css/background.png" alt="Logo" class="back-img">
+    </div>
+
+    <div class="container mt-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p>Lorem ipsum dolor sit amet. Cum dolor repellat ad soluta quas est atque voluptatem et odit sunt. Et nesciunt temporibus 33 fugit voluptatum in blanditiis tenetur non officia veritatis 33 internos quam hic necessitatibus necessitatibus. </p><p>Est architecto labore ad quos voluptates quo ratione nisi et rerum dolore. Et fuga veniam aut voluptatem rerum et deserunt omnis qui molestias ullam eum voluptatibus amet et magni eius est velit debitis. Qui sunt temporibus qui nisi ipsum et quod culpa cum dignissimos aliquam rem repellendus dolores. Ad quia iure in suscipit harum a ipsam nesciunt et recusandae enim est veniam eaque eos atque voluptas hic deserunt officia! </p><p>Et voluptate sunt ad aspernatur ducimus ad itaque omnis sit consequuntur error. Ad dicta quia vel voluptatem consectetur qui fuga dolorem. Est nobis omnis et fuga beatae est sint vitae cum officiis quisquam non ipsam dolor ea debitis consequatur et tempore internos. </p>
+                </p>
+                <a href="link_para_pagina_de_inscricoes" class="btn btn-primary inscription-button">Fazer inscrição</a>
             </div>
+            <div class="col-md-6">
+                <div class="map-image">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3109.778414190658!2d-9.196425323632818!3d38.79171385293234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecd558ba667c1%3A0x488b24edb1973513!2sAcademia%20dos%20Peixinhos%20-%20Creche%20e%20Jardim%20de%20Inf%C3%A2ncia!5e0!3m2!1spt-PT!2ses!4v1712781926240!5m2!1spt-PT!2ses" width="550" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
         </div>
     </div>
 
-    <div class="container mt-5">
-        <!-- Sobre Nós -->
-        <section class="my-5">
-            <h2>Sobre Nós</h2>
-            <p>Descrição breve da academia...</p>
-        </section>
-        <!--Eventos -->
-        <section class="my-5">
-            <h2>Eventos</h2>
-            <!-- eventos aqui -->
-        </section>
-
-        <!-- fotos?????? -->
-        <section class="my-5">
-            <h2>Galeria</h2>
-            <!-- fotos aqui -->
-        </section>
-
-        <!-- Contato e Localização -->
-        <section class="my-5">
-            <h2>Contato</h2>
-            <!-- Informações aqui -->
-        </section>
-    </div>
-
-    <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2024 Academia dos Peixinhos Cloud
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-md-start">
+                    <h6>Contacto</h6>
+                    geralacademia@gmail.com
+                </div>
+                <div class="col-md-4 text-md-center">
+                    <h6>Funcionamento</h6>
+                    Segunda - Sexta<br />
+                    07:00 - 18:00
+                    <div>
+                        <a href="politica-de-privacidade" class="text-muted">Política de Privacidade</a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <h6>Localização</h6>
+                    123 Demo Street<br />
+                    Lisboa 1600-555
+                </div>
+            </div>
         </div>
     </footer>
 

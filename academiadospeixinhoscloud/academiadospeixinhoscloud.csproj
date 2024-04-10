@@ -21,4 +21,9 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\css\background.png" />
+    <None Include="wwwroot\css\logo.png" />
+  </ItemGroup>
+
 </Project>
