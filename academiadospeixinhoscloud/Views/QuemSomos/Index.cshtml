@@ -1,11 +1,90 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <style>
+        .main-image {
+            width: 100%; 
+            height: 40vh; 
+            display: block;
+            margin: 20px auto; 
+        }
 
-<html>
+        .contact-section {
+            background-color: #e4e4e4; 
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        .social-icons i {
+            width: 24px; 
+            margin: 5px;
+        }
+
+        .send-button {
+            background-color: darkgoldenrod;
+            color: black;
+            border: none;
+        }
+    </style>
+</head>
 <body>
-    <h1>QuemSomos</h1>
+
+    <div class="container mt-5">
+        <div class="text-block">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+            </p>
+            <img src="~/css/background.png" alt="Imagem Central" class="main-image">
+            <p>Aenean nibh magna, commodo eu justo id, cursus finibus justo. Maecenas ultricies nisl gravida, condimentum sem ac, efficitur erat.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+            </p>
+        </div>
+        <div class="container mt-5 contact-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Contate-Nos</h3>
+                    <p>Nosso endereço de correspondência é:</p>
+                    <address>
+                        Av. Magalhães Coutinho 11<br>
+                        2675-654 Odivelas, Portugal<br>
+                        Telefone: 922-922-9222
+                    </address>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-google-plus-g"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Introduza o seu nome">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Introduza um email válido">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Introduza a sua menssagem"></textarea>
+                        </div>
+                        <button type="submit" class="btn send-button">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

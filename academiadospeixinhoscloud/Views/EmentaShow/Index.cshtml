@@ -1,12 +1,97 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<html>
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ementas das Salas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .carousel-item img {
+            max-height: 300px; 
+            width: auto; 
+            margin: auto; 
+
+        }
+    </style>
+</head>
 <body>
-    <h1>EmentaShow</h1>
+
+    <div class="container mt-5">
+        <div class="card mb-4">
+            <div class="card-header text-center">
+                Ementa Sala Roxa e Laranja
+            </div>
+            <div class="card-body">
+                <div id="carouselSalaRoxaeLaranja" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselSalaRoxaeLaranja" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselSalaRoxaeLaranja" data-slide-to="1"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/css/ementa1.jpg" class="d-block w-100" alt="Primeira imagem da Ementa Sala Roxa e Laranja">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/css/ementa2.jpg" class="d-block w-100" alt="Segunda imagem da Ementa Sala Roxa e Laranja">
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselSalaRoxaeLaranja" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselSalaRoxaeLaranja" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </div>
+            </div>
+            <div class="card-footer text-muted text-center">
+                22/12/2023
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card mb-4">
+            <div class="card-header text-center">
+                Ementa Sala Rosa e Verde
+            </div>
+            <div class="card-body">
+                <div id="carouselSalaRosaeVerde" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselSalaRosaeVerde" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselSalaRosaeVerde" data-slide-to="1"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/css/ementa2.jpg" class="d-block w-100" alt="Primeira imagem da Ementa Sala Roxa e Laranja">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/css/ementa1.jpg" class="d-block w-100" alt="Segunda imagem da Ementa Sala Roxa e Laranja">
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselSalaRosaeVerde" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselSalaRosaeVerde" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </div>
+            </div>
+            <div class="card-footer text-muted text-center">
+                22/12/2023
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-

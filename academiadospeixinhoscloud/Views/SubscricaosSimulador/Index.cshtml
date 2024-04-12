@@ -1,10 +1,151 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<html>
-    <body >
-        <h1>SubscricaosSimulador</h1>
-    </body>
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscrições e Atividades</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card img {
+            width: 100%; 
+        }
+
+        .parte-dois {
+            display: flex;
+        }
+
+        .metade {
+            flex: 0 0 50%;
+        }
+
+        .vaga-box {
+            border: 1px solid #000;
+            width: 40%;
+            height:50%;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            top: 270px; 
+            left:100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+
+        <h2 class="text-center">Subscrições</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+            .
+        </p>
+
+        <h2 class="text-center">Atividades extras curriculares</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+        </p>
+
+        <div class="parte-dois">
+            <div class="metade">
+                <label for="dataNascimento">Data de nascimento:</label>
+                <input type="date" id="dataNascimento" class="form-control mb-3">
+
+                <label for="dataInicio">Data de início:</label>
+                <input type="date" id="dataInicio" class="form-control mb-3">
+
+                <label for="tipoSubscricao">Tipo de subscrição:</label>
+                <select id="tipoSubscricao" class="form-control mb-3">
+                    <!-- op de subscrição aqui -->
+                </select>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="taekwondo">
+                    <label class="form-check-label" for="taekwondo">Taekwondo</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="ingles">
+                    <label class="form-check-label" for="ingles">Inglês</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="danca">
+                    <label class="form-check-label" for="danca">Dança</label>
+                </div>
+
+                <label for="mesesParcial">Ano letivo parcial, quantos meses:</label>
+                <select id="mesesParcial" class="form-control mb-3">
+                    <!-- Op de meses aqui -->
+                </select>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="anoCompleto">
+                    <label class="form-check-label" for="anoCompleto">Ano letivo completo:</label>
+                    <label class="form-check-label ml-2" for="anoCompleto">Sim</label>
+                </div>
+
+                <button class="btn btn-primary mt-3">Confirmar</button>
+            </div>
+
+            <div class="vaga-box">
+                TEM VAGA / SEM VAGA
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

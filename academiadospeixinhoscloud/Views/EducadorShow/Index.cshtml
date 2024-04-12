@@ -1,13 +1,146 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Educador</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-<html>
+    <style>
+        .search-section .input-group {
+            width: 100%;
+        }
+
+        .search-section h2 {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .btn-search {
+            width: auto;
+            padding: .375rem .75rem;
+        }
+
+        .input-search {
+            width: calc(100% - 100px); /* Subtrai a largura estimada do botão */
+        }
+
+        #redirecionadoPara {
+            width: 100%;
+            box-sizing: border-box; 
+        }
+
+        #assunto {
+            height: 50px;
+        }
+
+        #conteudo {
+            height: 300px;
+        }
+
+        .btn-enviar {
+            float: right; 
+            margin-top: 10px; 
+        }
+    </style>
+</head>
 <body>
-    <h1>EducadorShow</h1>
+
+    <div class="container mt-5">
+        <div class="row mb-3 search-section">
+            <div class="col-auto mr-auto">
+                <h2>Criança:</h2>
+             </div>
+            <div class="col">
+                <div class="input-group">
+                    <input type="text" class="form-control input-search" placeholder="Nome da criança">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary btn-search" type="button">Pesquisar</button>
+                    </div>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col">
+                <p>Nome:</p>
+                <p>Data de nascimento, idade:</p>
+                <p>NIF:</p>
+                <p>Nis:</p>
+                <p>Número de utente:</p>
+                <p>Seguro de saúde:</p>
+                <p>Apólice:</p>
+                <p>Seguradora:</p>
+                <p>Morada fiscal:</p>
+                <p>Nacionalidade:</p>
+                <p>Agregado familiar (quantidade):</p>
+                <p>Autorizados a recolher a criança:</p>
+                <p>Alergias doenças e incapacidades:</p>
+                <p>N de cartão de cidadão e validade:</p>
+            </div>
+        </div>
+
+            <div class="row mb-3 mt-5 search-section">
+                <div class="col-auto mr-auto">
+                    <h2>Pais:</h2>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-search" placeholder="Nome do pai/mãe">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary btn-search" type="button">Pesquisar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col">
+                <p>Nome:</p>
+                <p>Data nascimento:</p>
+                <p>NIF:</p>
+                <p>N identificação social:</p>
+                <p>N utente:</p>
+                <p>Morada:</p>
+                <p>Email:</p>
+                <p>Telefone 1:</p>
+                <p>Telefone 2:</p>
+                <p>N cartão de cidadão e validade:</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <label for="redirecionadoPara">Rederecionado para:</label>
+                <input type="text" id="redirecionadoPara" class="form-control input-100 height-50">
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-12">
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto" class="form-control input-100">
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-12">
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" class="form-control input-100 height-300"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-12">
+                <button class="btn btn-primary btn-enviar" type="button">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
-
-
