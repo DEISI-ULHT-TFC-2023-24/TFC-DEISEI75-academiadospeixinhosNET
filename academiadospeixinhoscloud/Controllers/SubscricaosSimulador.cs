@@ -39,7 +39,7 @@ namespace academiadospeixinhoscloud.Controllers
             Dictionary<string, int> preenchimento = new Dictionary<string, int>();
             ViewBag.preenchimento = preenchimento;
 
-            ViewBag.Vaga = "Calcular Vaga";
+            ViewBag.Vaga = "TEM VAGA / SEM VAGA";
 
             return View();
         }
@@ -135,10 +135,10 @@ namespace academiadospeixinhoscloud.Controllers
 
             if(temVaga)
             {
-                ViewBag.Vaga = "Tem Vaga";
+                ViewBag.Vaga = "TEM VAGA";
                 return View("Index");
             }
-            ViewBag.Vaga = "Não Tem Vaga";
+            ViewBag.Vaga = "NÃO TEM VAGA";
             return View("Index");
         }
     }

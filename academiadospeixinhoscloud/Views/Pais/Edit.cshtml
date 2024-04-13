@@ -47,7 +47,7 @@
 
                 <div class="form-group">
                     <label asp-for="NomesCriancas" class="control-label">Nomes das Crianças</label>
-                    <input asp-for="NomesCriancas" class="form-control" />
+                    <select asp-for="NomesCriancas" asp-items="ViewBag.Criancas" class="form-control" multiple></select>
                     <span asp-validation-for="NomesCriancas" class="text-danger"></span>
                 </div>
 
