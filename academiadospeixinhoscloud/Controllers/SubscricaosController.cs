@@ -73,7 +73,7 @@ namespace academiadospeixinhoscloud.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             ViewBag.Salas = new SelectList(_context.Sala, "Nome", "Nome");
-            ViewBag.Criancas = new SelectList(_context.Crianca, "Nome", "Nome");
+            ViewBag.NomesCriancas = new SelectList(_context.Crianca, "Nome", "Nome");
 
             if (id == null)
             {

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body class="container mt-4">
-«    <div>
+   <div>
         <label for="selectedCars">Selected:</label>
         @foreach (var item in ViewBag.Selected)
         {
@@ -19,30 +19,67 @@
         {
             <h3 class="mt-2">@item</h3>
         }
+
+    </div>
+
+    <div>
     <form action="/Email/Select" method="post">
         <div class="form-group">
             <h2>Criancas:</h2>
             <select name="Crianca" id="Crianca" asp-items="ViewBag.Crianca" class="custom-select mt-5 pt-3 " multiple></select>
-    </div>
-
-«    <form action="/Email/Select" method="post">
-        <div class="form-group">
-            <label for="Crianca">Criança</label>
-            <select name="Crianca" id="Crianca" class="custom-select mt-3" multiple asp-items="ViewBag.Crianca"></select>
         </div>
-
         <div class="form-group">
-            <label for="Pai">Pai</label>
-            <select name="Pai" id="Pai" class="custom-select mt-3" multiple asp-items="ViewBag.Pai"></select>
+            <h2>Pais:</h2>
+            <select name="Pai" id="Pai" asp-items="ViewBag.Pai" class="custom-select mt-5 pt-3 " multiple></select>
+        </div>
+        <div class="form-group">
+            <h2>Atividade:</h2>
+            <select name="Atividade" id="Atividade" asp-items="ViewBag.Atividade" class="custom-select mt-5 pt-3 " multiple></select>
+        </div>
+        <div class="form-group">
+            <h2>Subscricao:</h2>
+            <select name="Subscricao" id="Subscricao" asp-items="ViewBag.Subscricao" class="custom-select mt-5 pt-3 " multiple></select>
+        </div>
+        <div class="form-group">
+            <h2>Sala:</h2>
+            <select name="Sala" id="Sala" asp-items="ViewBag.Sala" class="custom-select mt-5 pt-3 " multiple></select>
         </div>
         <br><br>
         <input type="submit" value="Submit">
     </form>
-
-        <input type="submit" value="Submit" class="btn btn-primary mt-3">
+        <h2>Send Email</h2>
+    <form action="mailto:@ViewBag.multipleEmailsToSend" method="get" enctype="text/plain" onsubmit="prepareEmail(event)">
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject"><br>
+        <label for="body">Body:</label><br>
+        <textarea id="body" name="body" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Send Email">
     </form>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
-«    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    </div>
+
+<script>
+    function prepareEmail(event) {
+        event.preventDefault(); // Prevent form submission
+
+        var subject = document.getElementById('subject').value;
+        var body = document.getElementById('body').value;
+
+        // Construct mailto URL with subject and body
+        var mailtoLink += 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+        // Open default email client with pre-filled subject and body
+        window.location.href = mailtoLink;
+    }
+</script>
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

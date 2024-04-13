@@ -70,7 +70,7 @@ namespace academiadospeixinhoscloud.Controllers
         // GET: Salas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            ViewBag.Subscricoes = new SelectList(_context.Subscricao, "Nome", "Nome");
+            ViewBag.NomesSubscricoes = new SelectList(_context.Subscricao, "Nome", "Nome");
             if (id == null)
             {
                 return NotFound();
