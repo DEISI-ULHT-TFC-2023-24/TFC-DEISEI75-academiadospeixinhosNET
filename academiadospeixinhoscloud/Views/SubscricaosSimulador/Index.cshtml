@@ -100,42 +100,47 @@
 
         <div class="parte-dois">
             <div class="metade">
-                <label for="DataNascimento">Data de nascimento:</label>
-                <input type="date" id="DataNascimento" class="form-control mb-3">
+                <form action="/SubscricaosSimulador/Select" method="post">
+                    <label for="DataNascimento">Data de nascimento:</label>
+                    <input type="date" id="DataNascimento" class="form-control mb-3">
 
-                <label for="DataInicio">Data de início:</label>
-                <input type="date" id="DataInicio" class="form-control mb-3">
+                    <label for="DataInicio">Data de início:</label>
+                    <input type="date" id="DataInicio" class="form-control mb-3">
 
-                <label for="Subscricao">Tipo de subscrição:</label>
-                <select id="Subscricao" class="form-control mb-3">
-                    <!-- op de subscrição aqui -->
-                </select>
+                    <label for="Subscricao">Tipo de subscrição:</label>
+                    <div class="form-group" class="form-control mb-3">
+                        <h2>Subscricao:</h2>
+                        <select name="Subscricao" id="Subscricao" asp-items="ViewBag.Subscricao" class="custom-select mt-5 pt-3 " multiple></select>
+                    </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="taekwondo">
-                    <label class="form-check-label" for="taekwondo">Taekwondo</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="ingles">
-                    <label class="form-check-label" for="ingles">Inglês</label>
-                </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="danca">
-                    <label class="form-check-label" for="danca">Dança</label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="taekwondo">
+                        <label class="form-check-label" for="taekwondo">Taekwondo</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="ingles">
+                        <label class="form-check-label" for="ingles">Inglês</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="danca">
+                        <label class="form-check-label" for="danca">Dança</label>
+                    </div>
 
-                <label for="nparcial">Ano letivo parcial, quantos meses:</label>
-                <select id="nparcial" class="form-control mb-3">
-                    <!-- Op de meses aqui -->
-                </select>
+                    <div class="form-control mb-3">
+                        <label for="nparcial">Ano letivo parcial, quantos meses:</label>
+                        <input type="number" id="nparcial" name="nparcial" min="0">
+                    </div>
+                        <!-- Op de meses aqui -->
+                    </select>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="anoCompleto">
-                    <label class="form-check-label" for="anoCompleto">Ano letivo completo:</label>
-                    <label class="form-check-label ml-2" for="anoCompleto">Sim</label>
-                </div>
-
-                <button class="btn btn-primary mt-3">Confirmar</button>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="anoCompleto">
+                        <label class="form-check-label" for="anoCompleto">Ano letivo completo:</label>
+                        <label class="form-check-label ml-2" for="anoCompleto">Sim</label>
+                    </div>
+                
+                    <button class="btn btn-primary mt-3">Confirmar</button>
+                </form>
             </div>
 
             <div class="vaga-box">
