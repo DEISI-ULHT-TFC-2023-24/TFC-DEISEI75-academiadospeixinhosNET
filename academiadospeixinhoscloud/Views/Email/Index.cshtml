@@ -74,7 +74,7 @@
             body = encodeURIComponent(body).replace(/%20/g, ' ');
 
             // Construct mailto URL with subject and body
-            var mailtoLink = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + body;
+            var mailtoLink += 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + body;
 
 
         // Open default email client with pre-filled subject and body
