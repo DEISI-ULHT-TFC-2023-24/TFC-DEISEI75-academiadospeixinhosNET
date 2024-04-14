@@ -247,7 +247,11 @@ namespace academiadospeixinhoscloud.Controllers
             string multipleEmailsToSend = "";
             foreach(var item in selectedEmailList)
             {
-                multipleEmailsToSend += item + ",";
+                if (item!=null)
+                {
+                    multipleEmailsToSend += item + ",";
+                }
+
             }
 
             ViewBag.multipleEmailsToSend = multipleEmailsToSend;
