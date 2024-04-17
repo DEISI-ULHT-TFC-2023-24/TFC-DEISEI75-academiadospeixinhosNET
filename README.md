@@ -1,3 +1,5 @@
+Web App totalmente disponivel de acordo com o master branch: https://academiadospeixinhoscloud.azurewebsites.net/
+<br>
 IDE: Visual Studio 2022
 <br>
 ASP.NET CORE WEB APP
