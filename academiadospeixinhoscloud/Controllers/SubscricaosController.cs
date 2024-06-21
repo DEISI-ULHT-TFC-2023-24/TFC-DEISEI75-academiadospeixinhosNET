@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using academiadospeixinhoscloud.Data;
 using academiadospeixinhoscloud.Models;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization;
 
 namespace academiadospeixinhoscloud.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class SubscricaosController : Controller
     {
         private readonly academiadospeixinhoscloudContext _context;

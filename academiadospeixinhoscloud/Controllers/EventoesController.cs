@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using academiadospeixinhoscloud.Data;
 using academiadospeixinhoscloud.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace academiadospeixinhoscloud.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class EventoesController : Controller
     {
         private readonly academiadospeixinhoscloudContext _context;
@@ -55,7 +57,7 @@ namespace academiadospeixinhoscloud.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Data,Preco,Professor,Index,NomesSalas")] Evento evento)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Data,Preco,Professor,Index,NomesSalas,Link,Link2,Link3")] Evento evento)
         {
             ViewBag.Salas = new SelectList(_context.Sala, "Nome", "Nome");
 
@@ -91,7 +93,7 @@ namespace academiadospeixinhoscloud.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao,Data,Preco,Professor,Index,NomesSalas")] Evento evento)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao,Data,Preco,Professor,Index,NomesSalas,Link,Link2,Link3")] Evento evento)
         {
             ViewBag.Salas = new SelectList(_context.Sala, "Nome", "Nome");
 

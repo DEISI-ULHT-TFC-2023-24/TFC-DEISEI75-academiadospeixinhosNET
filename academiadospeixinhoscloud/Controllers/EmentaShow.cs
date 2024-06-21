@@ -1,4 +1,5 @@
 ﻿using academiadospeixinhoscloud.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace academiadospeixinhoscloud.Controllers

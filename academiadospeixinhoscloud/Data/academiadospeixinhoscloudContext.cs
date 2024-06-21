@@ -4,13 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using academiadospeixinhoscloud.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace academiadospeixinhoscloud.Data
 {
-    public class academiadospeixinhoscloudContext : DbContext
+    public class academiadospeixinhoscloudContext : IdentityDbContext<IdentityUser>
     {
-       
-        public academiadospeixinhoscloudContext (DbContextOptions<academiadospeixinhoscloudContext> options)
+        public academiadospeixinhoscloudContext(DbContextOptions<academiadospeixinhoscloudContext> options)
             : base(options)
         {
         }

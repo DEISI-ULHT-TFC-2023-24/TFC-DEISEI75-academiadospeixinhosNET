@@ -1,8 +1,10 @@
 ﻿using academiadospeixinhoscloud.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace academiadospeixinhoscloud.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class RelatorioRendimentos : Controller
     {
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using academiadospeixinhoscloud.Data;
 
@@ -11,9 +12,11 @@ using academiadospeixinhoscloud.Data;
 namespace academiadospeixinhoscloud.Migrations
 {
     [DbContext(typeof(academiadospeixinhoscloudContext))]
-    partial class academiadospeixinhoscloudContextModelSnapshot : ModelSnapshot
+    [Migration("20240602104506_eventolink")]
+    partial class eventolink
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -427,12 +430,6 @@ namespace academiadospeixinhoscloud.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Link")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Link2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Link3")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")

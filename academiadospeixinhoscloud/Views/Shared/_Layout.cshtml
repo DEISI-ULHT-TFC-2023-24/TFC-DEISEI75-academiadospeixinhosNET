@@ -19,33 +19,6 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Criancas" asp-action="Index">Crianças</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Atividades" asp-action="Index">Atividades</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pais" asp-action="Index">Pais</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Subscricaos" asp-action="Index">Subscrições</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Produtos" asp-action="Index">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Salas" asp-action="Index">Salas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Eventoes" asp-action="Index">Eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Ementas" asp-action="Index">Ementas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Email" asp-action="Index">Email</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="SubscricaosSimulador" asp-action="Index">SubscricaosSimulador</a>
                         </li>
                         <li class="nav-item">
@@ -63,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="SalaShow" asp-action="Index">SalaShow</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Botão do toggler movido para fora da div que será colapsada -->
@@ -74,6 +50,7 @@
             </div>
         </nav>
     </header>
+    <partial name="_LoginPartial" />
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

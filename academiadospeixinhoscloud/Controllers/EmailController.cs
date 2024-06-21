@@ -1,5 +1,6 @@
 ﻿using academiadospeixinhoscloud.Data;
 using academiadospeixinhoscloud.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using System.Linq;
 
 namespace academiadospeixinhoscloud.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class EmailController : Controller
     {
         private readonly academiadospeixinhoscloudContext _context;

@@ -7,21 +7,27 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using academiadospeixinhoscloud.Data;
 using academiadospeixinhoscloud.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace academiadospeixinhoscloud.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class AtividadesController : Controller
     {
         private readonly academiadospeixinhoscloudContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public AtividadesController(academiadospeixinhoscloudContext context)
+        public AtividadesController(academiadospeixinhoscloudContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Atividades
         public async Task<IActionResult> Index()
         {
+
             return View(await _context.Atividade.ToListAsync());
         }
 

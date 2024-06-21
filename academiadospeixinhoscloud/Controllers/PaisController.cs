@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using academiadospeixinhoscloud.Data;
 using academiadospeixinhoscloud.Models;
+using Microsoft.AspNetCore.Authorization;
+using academiadospeixinhoscloud.Services;
 
 namespace academiadospeixinhoscloud.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class PaisController : Controller
     {
         private readonly academiadospeixinhoscloudContext _context;
@@ -59,6 +62,8 @@ namespace academiadospeixinhoscloud.Controllers
         {
             if (ModelState.IsValid)
             {
+                //pai.Email = EncryptionHelper.Encrypt(pai.Email);
+
                 _context.Add(pai);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

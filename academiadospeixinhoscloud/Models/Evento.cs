@@ -16,5 +16,11 @@ namespace academiadospeixinhoscloud.Models
 
         public List<string?> NomesSalas { get; set; }
         public ICollection<Sala> Salas { get; } = new List<Sala>();
+
+        public string? Link { get; set; }
+
+        public string? Link2 { get; set; }
+
+        public string? Link3 { get; set; }
     }
 }

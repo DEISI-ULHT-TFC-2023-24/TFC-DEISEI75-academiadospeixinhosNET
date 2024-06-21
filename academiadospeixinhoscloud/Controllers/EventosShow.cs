@@ -1,4 +1,6 @@
 ﻿using academiadospeixinhoscloud.Data;
+using academiadospeixinhoscloud.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace academiadospeixinhoscloud.Controllers
@@ -14,6 +16,17 @@ namespace academiadospeixinhoscloud.Controllers
         }
         public IActionResult Index()
         {
+
+            var eventos = _context.Evento.ToList();
+            List<Evento> eventosBag = new List<Evento> { };
+
+            foreach (var evento in eventos)
+            {
+                eventosBag.Add(evento);
+            }
+
+            ViewBag.eventosBag = eventosBag;
+
             return View();
         }
     }

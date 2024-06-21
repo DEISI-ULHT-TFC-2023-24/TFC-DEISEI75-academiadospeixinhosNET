@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using academiadospeixinhoscloud.Data;
 using academiadospeixinhoscloud.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace academiadospeixinhoscloud.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class ProdutosController : Controller
     {
         private readonly academiadospeixinhoscloudContext _context;

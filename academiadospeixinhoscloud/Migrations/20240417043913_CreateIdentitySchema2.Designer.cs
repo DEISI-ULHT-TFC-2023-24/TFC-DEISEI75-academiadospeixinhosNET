@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using academiadospeixinhoscloud.Data;
 
@@ -11,9 +12,11 @@ using academiadospeixinhoscloud.Data;
 namespace academiadospeixinhoscloud.Migrations
 {
     [DbContext(typeof(academiadospeixinhoscloudContext))]
-    partial class academiadospeixinhoscloudContextModelSnapshot : ModelSnapshot
+    [Migration("20240417043913_CreateIdentitySchema2")]
+    partial class CreateIdentitySchema2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -425,15 +428,6 @@ namespace academiadospeixinhoscloud.Migrations
 
                     b.Property<int>("Index")
                         .HasColumnType("int");
-
-                    b.Property<string>("Link")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Link2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Link3")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
