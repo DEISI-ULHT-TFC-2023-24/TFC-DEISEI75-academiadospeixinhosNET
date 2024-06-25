@@ -30,7 +30,7 @@ namespace academiadospeixinhoscloud.Controllers
         }
         public IActionResult Index()
         {
-            List<string> listaOfertas = new List<string> { "Creche Feliz", "Normal", "Higiene", "Reserva" };
+            List<string> listaOfertas = new List<string> { "Creche Feliz", "Privado", "Higiene", "Reserva" };
             List<SelectListItem> selectList = listaOfertas.Select(x => new SelectListItem { Text = x, Value = x }).ToList();
             ViewBag.Subscricao = selectList;
 
