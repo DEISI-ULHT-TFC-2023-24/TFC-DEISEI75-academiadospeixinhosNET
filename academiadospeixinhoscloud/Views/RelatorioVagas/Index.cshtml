@@ -1,24 +1,56 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-<html>
+        h1 {
+            text-align: center;
+        }
+
+        .form-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .btn-confirmar {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .btn-confirmar:hover {
+                background-color: darkgreen;
+            }
+    </style>
+</head>
 <body>
-    <h1>RelatorioVagas</h1>
-    <form action="/RelatorioVagas/Select" method="post">
-        <div class="form-group">
-            <label for="DataInicio">Data de Inico:</label>
-            <input type="date" id="DataInicio" name="DataInicio">
-        </div>
+    <h1>Relatório de Vagas</h1>
+    <div class="form-container">
+        <form action="/RelatorioVagas/Select" method="post">
+            <div class="form-group">
+                <label for="DataInicio">Data de Início:</label>
+                <input type="date" id="DataInicio" name="DataInicio">
+            </div>
 
-        <div class="form-group">
-            <label for="DataFim">Data de Fim:</label>
-            <input type="date" id="DataFim" name="DataFim">
-        </div>
+            <div class="form-group">
+                <label for="DataFim">Data de Fim:</label>
+                <input type="date" id="DataFim" name="DataFim">
+            </div>
 
-        <button class="btn btn-primary mt-3">Confirmar</button>
-    </form>
+            <button class="btn-confirmar mt-3">Confirmar</button>
+        </form>
+    </div>
 </body>
 </html>
