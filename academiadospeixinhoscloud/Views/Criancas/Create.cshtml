@@ -96,28 +96,24 @@
                     <input asp-for="ValidadeBI" type="date" class="form-control" />
                     <span asp-validation-for="ValidadeBI" class="text-danger"></span>
                 </div>
-
                 <!-- Campos de seleção múltipla -->
                 <div class="form-group">
                     <label asp-for="NomesAtividades" class="control-label">Atividades</label>
                     <select asp-for="NomesAtividades" asp-items="ViewBag.Atividade" class="custom-select" multiple>
-                        <option value="">Selecione as atividades</option>
                     </select>
                     <span asp-validation-for="NomesAtividades" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="NomesPais" class="control-label">Pais</label>
-                    <select asp-for="NomesPais" asp-items="ViewBag.Pai" class="custom-select" multiple>
-                        <option value="">Selecione os pais</option>
+                    <select asp-for="NomesPais" asp-items="ViewBag.Pai" class="custom-select" multiple>  
                     </select>
                     <span asp-validation-for="NomesPais" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="NomesSubscricao" class="control-label">Subscrições</label>
-                    <select asp-for="NomesSubscricao" asp-items="ViewBag.Subscricao" class="custom-select" multiple>
-                        <option value="">Selecione as subscrições</option>
+                    <select asp-for="NomesSubscricao" asp-items="ViewBag.Subscricao" class="custom-select" multiple> 
                     </select>
                     <span asp-validation-for="NomesSubscricao" class="text-danger"></span>
                 </div>
@@ -125,11 +121,9 @@
                 <div class="form-group">
                     <label asp-for="NomesProduto" class="control-label">Produtos</label>
                     <select asp-for="NomesProduto" asp-items="ViewBag.Produto" class="custom-select" multiple>
-                        <option value="">Selecione os produtos</option>
                     </select>
                     <span asp-validation-for="NomesProduto" class="text-danger"></span>
                 </div>
-
 
                 <div class="form-group text-right">
                     <input type="submit" value="Criar" class="btn btn-primary" />
