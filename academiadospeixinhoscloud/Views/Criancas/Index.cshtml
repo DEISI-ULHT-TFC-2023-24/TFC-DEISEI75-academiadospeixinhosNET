@@ -18,14 +18,12 @@
                 <th>@Html.DisplayNameFor(model => model.DataNascimento)</th>
                 <th>@Html.DisplayNameFor(model => model.NIS)</th>
                 <th>@Html.DisplayNameFor(model => model.NumeroUtente)</th>
-                <th>@Html.DisplayNameFor(model => model.SeguroSaude)</th>
-                <th>@Html.DisplayNameFor(model => model.Apolice)</th>
-                <th>@Html.DisplayNameFor(model => model.Seguradora)</th>
                 <th>@Html.DisplayNameFor(model => model.MoradaFiscal)</th>
                 <th>@Html.DisplayNameFor(model => model.Nacionalidade)</th>
                 <th>@Html.DisplayNameFor(model => model.Doencas)</th>
                 <th>@Html.DisplayNameFor(model => model.NBI)</th>
                 <th>@Html.DisplayNameFor(model => model.ValidadeBI)</th>
+                <th>@Html.DisplayNameFor(model => model.NomesSubscricao)</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -37,14 +35,12 @@
                     <td>@(new string('*', item.DataNascimento.ToString("yyyy-MM-dd").Length))</td>
                     <td>@(new string('*', item.NIS?.Length ?? 0))</td>
                     <td>@(new string('*', item.NumeroUtente?.Length ?? 0))</td>
-                    <td>@(new string('*', item.SeguroSaude?.Length ?? 0))</td>
-                    <td>@(new string('*', item.Apolice?.Length ?? 0))</td>
-                    <td>@(new string('*', item.Seguradora?.Length ?? 0))</td>
                     <td>@(new string('*', item.MoradaFiscal?.Length ?? 0))</td>
                     <td>@(new string('*', item.Nacionalidade?.Length ?? 0))</td>
                     <td>@(new string('*', item.Doencas?.Length ?? 0))</td>
                     <td>@(new string('*', item.NBI?.Length ?? 0))</td>
                     <td>@(new string('*', item.ValidadeBI.ToString("yyyy-MM-dd").Length))</td>
+                    <td>@string.Join("\n| ", item.NomesSubscricao)</td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a>
                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Detalhes</a>

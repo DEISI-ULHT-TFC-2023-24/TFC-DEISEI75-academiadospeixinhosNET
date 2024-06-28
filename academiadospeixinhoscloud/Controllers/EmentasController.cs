@@ -57,7 +57,7 @@ namespace academiadospeixinhoscloud.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Valida,NomesSalas")] Ementa ementa)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Valida,NomesSalas,Link")] Ementa ementa)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace academiadospeixinhoscloud.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Valida,NomesSalas")] Ementa ementa)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Valida,NomesSalas,Link")] Ementa ementa)
         {
             if (id != ementa.Id)
             {

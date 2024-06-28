@@ -18,6 +18,10 @@
             flex: 0 0 50%;
         }
 
+        img{
+            height:300px;
+        }
+
         .vaga-box {
             border: 1px solid #000;
             width: 40%;
@@ -38,30 +42,30 @@
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="card">
-                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                    <img src="~/css/cactu_academia.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                            Subscrição privada, que extende o essencial com a opção de adicionar atividades extra curriculares como Taekwondo, Inglês, Dança e/ou pacote de higiene
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card">
-                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                    <img src="~/css/ser_crianca_academia.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                            Creche Feliz, a instituição encontra-se aberta a receber crianças subsídiadas pelo Estado Portugues com o pacote base.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card">
-                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                    <img src="~/css/recreio_academia.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate congue molestie. Suspendisse potenti. Suspendisse autem tellus eget ex consectetur, in tempor nisi scelerisque.
+                            A subscrição de Higiene a instituição fica encarregue de facultar à criança pomadas especiais fraldas e outos items de Higiene.
                         </p>
                     </div>
                 </div>
@@ -75,24 +79,24 @@
             - Produtos de higiene pessoal (toalhitas e pomadas para peles normais);<br />
             - Material Didático;<br />
             - Material Pedagógico;<br />
-            - Atividades curriculares: Musica Ginástica;<br />
+            - Atividades curriculares: Musica, Ginástica e Inglês;<br />
         </p>
 
         <h2 class="text-center">Atividades extras curriculares</h2>
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="card">
-                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                    <img src="~/css/ginastica_academia.jpg" class="card-img-top" alt="...">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card">
-                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                    <img src="~/css/taekwondo_academia.jpg" class="card-img-top" alt="...">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card">
-                    <img src="~/css/evento1.jpg" class="card-img-top" alt="...">
+                    <img src="~/css/fast_track_academia.jpg" class="card-img-top" alt="...">
                 </div>
             </div>
         </div>
@@ -131,7 +135,12 @@
                     <label for="Subscricao">Tipo de subscrição:</label>
                     <div class="form-group" class="form-control mb-3">
                         <h2>Subscricao:</h2>
-                        <select name="Subscricao" id="Subscricao" asp-items="ViewBag.Subscricao" class="custom-select mt-5 pt-3 " multiple></select>
+                        <select name="Subscricao" id="Subscricao" class="custom-select mt-5 pt-3 " multiple>
+                            <option>Creche Feliz</option>
+                            <option>Privado</option>
+                            <option>Reserva</option>
+                            <option>Higiene</option>
+                        </select>
                     </div>
 
                     <div class="form-check">

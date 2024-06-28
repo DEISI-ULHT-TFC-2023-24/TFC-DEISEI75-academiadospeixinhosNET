@@ -113,8 +113,10 @@
 
                 <div class="form-group">
                     <label asp-for="NomesSubscricao" class="control-label">Subscrições</label>
-                    <select asp-for="NomesSubscricao" asp-items="ViewBag.Subscricao" class="custom-select" multiple>
-                    </select>
+                    <div class="resizable-container">
+                        <select asp-for="NomesSubscricao" asp-items="ViewBag.Subscricao" class="custom-select" multiple>
+                        </select>
+                    </div>
                     <span asp-validation-for="NomesSubscricao" class="text-danger"></span>
                 </div>
 

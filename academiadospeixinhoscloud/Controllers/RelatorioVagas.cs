@@ -95,204 +95,209 @@ namespace academiadospeixinhoscloud.Controllers
                 {
                     foreach (Crianca crianca in criancas)
                     {
-                        if (crianca.NomesSubscricao.Contains(subscricao.Nome))
+                        if (subscricao.DataInicio >= DataInicio && subscricao.DataFim <= DataFim)
                         {
-                            string nomeSala = "empty";
-                            if (subscricao.NomesSalas.Contains("Sala Roxa"))
-                            {
-                                nomeSala = "Sala Roxa";
-                            }
-                            if (subscricao.NomesSalas.Contains("Sala Laranja"))
-                            {
-                                nomeSala = "Sala Laranja";
-                            }
-                            if (subscricao.NomesSalas.Contains("Sala Rosa"))
-                            {
-                                nomeSala = "Sala Rosa";
-                            }
-                            if (subscricao.NomesSalas.Contains("Sala Verde"))
-                            {
-                                nomeSala = "Sala Verde";
-                            }
 
-                            if (nomeSala != null && nomeSala != "empty")
+                            if (crianca.NomesSubscricao.Contains(subscricao.Nome))
                             {
-                                string keySalaNome = nomeSala + subscricao.DataInicio.ToString();
-
-                                MonthSala monthSala = new MonthSala(keySalaNome, nomeSala, subscricao.DataInicio, 0,0,0,0);
-
-                                if(nomeSala == "Sala Roxa") {
-
-                                    if (MonthSalasRoxa.ContainsKey(keySalaNome))
-                                    {
-                                        if (subscricao.Nome.Contains("Normal"))
-                                        {
-                                            MonthSalasRoxa[keySalaNome].quantidadeNormal += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Higiene"))
-                                        {
-                                            MonthSalasRoxa[keySalaNome].quantidadeHigiene += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Creche Feliz"))
-                                        {
-                                            MonthSalasRoxa[keySalaNome].quantidadeCrecheFeliz += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Reserva"))
-                                        {
-                                            MonthSalasRoxa[keySalaNome].quantidadeReserva += 1;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        if (subscricao.Nome.Contains("Normal"))
-                                        {
-                                            monthSala.quantidadeNormal += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Higiene"))
-                                        {
-                                            monthSala.quantidadeHigiene += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Creche Feliz"))
-                                        {
-                                            monthSala.quantidadeCrecheFeliz += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Reserva"))
-                                        {
-                                            monthSala.quantidadeReserva += 1;
-                                        }
-                                        MonthSalasRoxa.Add(monthSala.keySalaNomeData, monthSala);
-                                    }
-                                }
-                                if (nomeSala == "Sala Laranja")
+                                string nomeSala = "empty";
+                                if (subscricao.NomesSalas.Contains("Sala Roxa"))
                                 {
-
-                                    if (MonthSalasLaranja.ContainsKey(keySalaNome))
-                                    {
-                                        if (subscricao.Nome.Contains("Normal"))
-                                        {
-                                            MonthSalasLaranja[keySalaNome].quantidadeNormal += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Higiene"))
-                                        {
-                                            MonthSalasLaranja[keySalaNome].quantidadeHigiene += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Creche Feliz"))
-                                        {
-                                            MonthSalasLaranja[keySalaNome].quantidadeCrecheFeliz += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Reserva"))
-                                        {
-                                            MonthSalasLaranja[keySalaNome].quantidadeReserva += 1;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        if (subscricao.Nome.Contains("Normal"))
-                                        {
-                                            monthSala.quantidadeNormal += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Higiene"))
-                                        {
-                                            monthSala.quantidadeHigiene += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Creche Feliz"))
-                                        {
-                                            monthSala.quantidadeCrecheFeliz += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Reserva"))
-                                        {
-                                            monthSala.quantidadeReserva += 1;
-                                        }
-                                        MonthSalasLaranja.Add(monthSala.keySalaNomeData, monthSala);
-                                    }
+                                    nomeSala = "Sala Roxa";
                                 }
-                                if (nomeSala == "Sala Rosa")
+                                if (subscricao.NomesSalas.Contains("Sala Laranja"))
                                 {
-
-                                    if (MonthSalasRosa.ContainsKey(keySalaNome))
-                                    {
-                                        if (subscricao.Nome.Contains("Normal"))
-                                        {
-                                            MonthSalasRosa[keySalaNome].quantidadeNormal += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Higiene"))
-                                        {
-                                            MonthSalasRosa[keySalaNome].quantidadeHigiene += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Creche Feliz"))
-                                        {
-                                            MonthSalasRosa[keySalaNome].quantidadeCrecheFeliz += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Reserva"))
-                                        {
-                                            MonthSalasRosa[keySalaNome].quantidadeReserva += 1;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        if (subscricao.Nome.Contains("Normal"))
-                                        {
-                                            monthSala.quantidadeNormal += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Higiene"))
-                                        {
-                                            monthSala.quantidadeHigiene += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Creche Feliz"))
-                                        {
-                                            monthSala.quantidadeCrecheFeliz += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Reserva"))
-                                        {
-                                            monthSala.quantidadeReserva += 1;
-                                        }
-                                        MonthSalasRosa.Add(monthSala.keySalaNomeData, monthSala);
-                                    }
+                                    nomeSala = "Sala Laranja";
                                 }
-                                if (nomeSala == "Sala Verde")
+                                if (subscricao.NomesSalas.Contains("Sala Rosa"))
                                 {
+                                    nomeSala = "Sala Rosa";
+                                }
+                                if (subscricao.NomesSalas.Contains("Sala Verde"))
+                                {
+                                    nomeSala = "Sala Verde";
+                                }
 
-                                    if (MonthSalasVerde.ContainsKey(keySalaNome))
+                                if (nomeSala != null && nomeSala != "empty")
+                                {
+                                    string keySalaNome = nomeSala + subscricao.DataInicio.ToString();
+
+                                    MonthSala monthSala = new MonthSala(keySalaNome, nomeSala, subscricao.DataInicio, 0, 0, 0, 0);
+
+                                    if (nomeSala == "Sala Roxa")
                                     {
-                                        if (subscricao.Nome.Contains("Normal"))
+
+                                        if (MonthSalasRoxa.ContainsKey(keySalaNome))
                                         {
-                                            MonthSalasVerde[keySalaNome].quantidadeNormal += 1;
+                                            if (subscricao.Nome.Contains("Normal"))
+                                            {
+                                                MonthSalasRoxa[keySalaNome].quantidadeNormal += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Higiene"))
+                                            {
+                                                MonthSalasRoxa[keySalaNome].quantidadeHigiene += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Creche Feliz"))
+                                            {
+                                                MonthSalasRoxa[keySalaNome].quantidadeCrecheFeliz += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Reserva"))
+                                            {
+                                                MonthSalasRoxa[keySalaNome].quantidadeReserva += 1;
+                                            }
                                         }
-                                        if (subscricao.Nome.Contains("Higiene"))
+                                        else
                                         {
-                                            MonthSalasVerde[keySalaNome].quantidadeHigiene += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Creche Feliz"))
-                                        {
-                                            MonthSalasVerde[keySalaNome].quantidadeCrecheFeliz += 1;
-                                        }
-                                        if (subscricao.Nome.Contains("Reserva"))
-                                        {
-                                            MonthSalasVerde[keySalaNome].quantidadeReserva += 1;
+                                            if (subscricao.Nome.Contains("Normal"))
+                                            {
+                                                monthSala.quantidadeNormal += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Higiene"))
+                                            {
+                                                monthSala.quantidadeHigiene += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Creche Feliz"))
+                                            {
+                                                monthSala.quantidadeCrecheFeliz += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Reserva"))
+                                            {
+                                                monthSala.quantidadeReserva += 1;
+                                            }
+                                            MonthSalasRoxa.Add(monthSala.keySalaNomeData, monthSala);
                                         }
                                     }
-                                    else
+                                    if (nomeSala == "Sala Laranja")
                                     {
-                                        if (subscricao.Nome.Contains("Normal"))
+
+                                        if (MonthSalasLaranja.ContainsKey(keySalaNome))
                                         {
-                                            monthSala.quantidadeNormal += 1;
+                                            if (subscricao.Nome.Contains("Normal"))
+                                            {
+                                                MonthSalasLaranja[keySalaNome].quantidadeNormal += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Higiene"))
+                                            {
+                                                MonthSalasLaranja[keySalaNome].quantidadeHigiene += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Creche Feliz"))
+                                            {
+                                                MonthSalasLaranja[keySalaNome].quantidadeCrecheFeliz += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Reserva"))
+                                            {
+                                                MonthSalasLaranja[keySalaNome].quantidadeReserva += 1;
+                                            }
                                         }
-                                        if (subscricao.Nome.Contains("Higiene"))
+                                        else
                                         {
-                                            monthSala.quantidadeHigiene += 1;
+                                            if (subscricao.Nome.Contains("Normal"))
+                                            {
+                                                monthSala.quantidadeNormal += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Higiene"))
+                                            {
+                                                monthSala.quantidadeHigiene += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Creche Feliz"))
+                                            {
+                                                monthSala.quantidadeCrecheFeliz += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Reserva"))
+                                            {
+                                                monthSala.quantidadeReserva += 1;
+                                            }
+                                            MonthSalasLaranja.Add(monthSala.keySalaNomeData, monthSala);
                                         }
-                                        if (subscricao.Nome.Contains("Creche Feliz"))
+                                    }
+                                    if (nomeSala == "Sala Rosa")
+                                    {
+
+                                        if (MonthSalasRosa.ContainsKey(keySalaNome))
                                         {
-                                            monthSala.quantidadeCrecheFeliz += 1;
+                                            if (subscricao.Nome.Contains("Normal"))
+                                            {
+                                                MonthSalasRosa[keySalaNome].quantidadeNormal += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Higiene"))
+                                            {
+                                                MonthSalasRosa[keySalaNome].quantidadeHigiene += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Creche Feliz"))
+                                            {
+                                                MonthSalasRosa[keySalaNome].quantidadeCrecheFeliz += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Reserva"))
+                                            {
+                                                MonthSalasRosa[keySalaNome].quantidadeReserva += 1;
+                                            }
                                         }
-                                        if (subscricao.Nome.Contains("Reserva"))
+                                        else
                                         {
-                                            monthSala.quantidadeReserva += 1;
+                                            if (subscricao.Nome.Contains("Normal"))
+                                            {
+                                                monthSala.quantidadeNormal += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Higiene"))
+                                            {
+                                                monthSala.quantidadeHigiene += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Creche Feliz"))
+                                            {
+                                                monthSala.quantidadeCrecheFeliz += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Reserva"))
+                                            {
+                                                monthSala.quantidadeReserva += 1;
+                                            }
+                                            MonthSalasRosa.Add(monthSala.keySalaNomeData, monthSala);
                                         }
-                                        MonthSalasVerde.Add(monthSala.keySalaNomeData, monthSala);
+                                    }
+                                    if (nomeSala == "Sala Verde")
+                                    {
+
+                                        if (MonthSalasVerde.ContainsKey(keySalaNome))
+                                        {
+                                            if (subscricao.Nome.Contains("Normal"))
+                                            {
+                                                MonthSalasVerde[keySalaNome].quantidadeNormal += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Higiene"))
+                                            {
+                                                MonthSalasVerde[keySalaNome].quantidadeHigiene += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Creche Feliz"))
+                                            {
+                                                MonthSalasVerde[keySalaNome].quantidadeCrecheFeliz += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Reserva"))
+                                            {
+                                                MonthSalasVerde[keySalaNome].quantidadeReserva += 1;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (subscricao.Nome.Contains("Normal"))
+                                            {
+                                                monthSala.quantidadeNormal += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Higiene"))
+                                            {
+                                                monthSala.quantidadeHigiene += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Creche Feliz"))
+                                            {
+                                                monthSala.quantidadeCrecheFeliz += 1;
+                                            }
+                                            if (subscricao.Nome.Contains("Reserva"))
+                                            {
+                                                monthSala.quantidadeReserva += 1;
+                                            }
+                                            MonthSalasVerde.Add(monthSala.keySalaNomeData, monthSala);
+                                        }
                                     }
                                 }
-                            } 
+                            }
                         }
                     }
                 }

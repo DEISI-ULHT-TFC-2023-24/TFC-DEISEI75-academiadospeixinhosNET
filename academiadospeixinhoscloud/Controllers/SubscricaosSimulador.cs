@@ -2,10 +2,13 @@
 using academiadospeixinhoscloud.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 
 namespace academiadospeixinhoscloud.Controllers
 {
+
+
     public class SalaCalendario
     {
         public string nome;
@@ -17,10 +20,31 @@ namespace academiadospeixinhoscloud.Controllers
         this.quantidade = quantidade;
         this.date = mes;
         }
+        
     }
+
+
 
     public class SubscricaosSimulador : Controller
     {
+
+        static string RemoveWordsFromString(string inputString)
+        {
+            List<string> wordsToRemove = new List<string> { "Creche","Feliz", "Normal", "Higiene", "Reserva" };
+            // Split the input string into words
+            string[] words = inputString.Split(new char[] { ' ', ',', '.', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Convert wordsToRemove to HashSet for O(1) average time complexity for lookups
+            HashSet<string> wordsToRemoveSet = new HashSet<string>(wordsToRemove.Select(word => word.ToLower()));
+
+            // Filter out words that are in wordsToRemoveSet
+            List<string> filteredWords = words.Where(word => !wordsToRemoveSet.Contains(word.ToLower())).ToList();
+
+            // Recreate the string from the filtered words
+            string outputString = string.Join(" ", filteredWords);
+
+            return outputString;
+        }
 
         private readonly academiadospeixinhoscloudContext _context;
 
@@ -64,12 +88,12 @@ namespace academiadospeixinhoscloud.Controllers
                     {
                         if (crianca.NomesSubscricao.Contains(subscricao.Nome))
                         {
-                            if (salaCalendarios.ContainsKey(subscricao.Nome))
+                            if (salaCalendarios.ContainsKey(RemoveWordsFromString(subscricao.Nome)))
                             {
-                                salaCalendarios[subscricao.Nome].quantidade += 1;
+                                salaCalendarios[RemoveWordsFromString(subscricao.Nome)].quantidade += 1;
 
                             }
-                            else salaCalendarios.Add(subscricao.Nome, new SalaCalendario(subscricao.Nome, 1, subscricao.DataInicio));
+                            else salaCalendarios.Add(RemoveWordsFromString(subscricao.Nome), new SalaCalendario(RemoveWordsFromString(subscricao.Nome), 1, subscricao.DataInicio));
                         }
                     }
                 }

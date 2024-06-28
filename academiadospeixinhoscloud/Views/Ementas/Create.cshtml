@@ -21,15 +21,22 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Valida" class="control-label">Valida</label>
-                    <input asp-for="Valida" type="checkbox" class="form-check-input ml-2" />
+                    <label asp-for="Valida" class="control-label">Validade</label>
+                    <input asp-for="Valida" type="date" class="form-control" />
                     <span asp-validation-for="Valida" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
+                    <label asp-for="Link" class="control-label">Link</label>
+                    <input asp-for="Link" class="form-control" placeholder="Insira o link" />
+                    <span asp-validation-for="Link" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
                     <label asp-for="NomesSalas" class="control-label">Salas</label>
-                    <select asp-for="NomesSalas" asp-items="ViewBag.Salas" class="custom-select" multiple>
-                        <!-- Opções de salas  -->
+                    <select asp-for="NomesSalas" class="custom-select">
+                        <option>Roxa e Laranja</option>
+                        <option>Rosa e Verde</option>
                     </select>
                 </div>
 

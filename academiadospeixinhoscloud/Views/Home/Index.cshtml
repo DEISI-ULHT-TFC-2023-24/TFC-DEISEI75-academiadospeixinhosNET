@@ -9,40 +9,46 @@
         .back-img {
             width: 100%;
             height: 40vh;
-            background-image: url('../Shared/background.png'); 
+            background-image: url('../Shared/background.png');
             background-size: cover;
             background-position: center;
-            position: relative; 
+            position: relative;
         }
 
         .logo {
-            height: 100px; 
+            height: 100px;
             width: auto;
-            position: absolute; 
+            position: absolute;
             top: 0;
             left: 0;
         }
 
-        .footer-info {
-            position: absolute;
+        .footer {
+            position: relative;
             bottom: 0;
             width: 100%;
             display: flex;
             justify-content: space-between;
             padding: 20px;
-            margin-top:20px;
+            margin-top: 20px;
         }
 
         .inscription-button {
             margin-top: 20px;
             margin-bottom: 50px;
         }
+
+        .row.align-items-stretch {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch; /* Isso fará com que todos os itens filhos da row estiquem para ocupar a altura máxima disponível */
+        }
     </style>
 </head>
 <body>
 
     <div class="full-width-image">
-        <img src="~/css/logo.png" alt="Logo" class="logo">
+        <img src="~/css/logo_academia.png" alt="Logo" class="logo">
     </div>
 
     <div class="back-img">
@@ -50,50 +56,54 @@
     </div>
 
     <div class="container mt-4">
-        <div class="row align-items-center">
+        <div class="row align-items-stretch">
             <div class="col-md-6">
                 <p>
                     Acreditamos num ensino ativo e estimulante, capaz de envolver os alunos nas tarefas e nos processos de construção do conhecimento, suficientemente atrativo para despertar nestes o gosto pelo saber e pelo aprender.
-
-                    Acreditamos que os alunos devem ser ouvidos e devem ser participantes no seu próprio processo de aprendizagem, a escola deve ser, acima de tudo, um local onde as crianças gostam de estar e são felizes.
+                    <br />
+                    Acreditamos que os alunos devem ser ouvidos e devem ser participantes no seu próprio processo de aprendizagem. Consideramos fundamental que cada aluno tenha voz ativa na sua jornada educacional, contribuindo com suas ideias e perspectivas.
+                    A escola deve ser, acima de tudo, um local onde as crianças gostam de estar e são felizes. É essencial que o ambiente escolar seja acolhedor e estimulante, promovendo o bem-estar e o desenvolvimento integral dos estudantes.
+                    <br />
+                    Nosso compromisso é proporcionar uma educação que vai além do simples repasse de informações, mas que realmente inspire e transforme, preparando os alunos para os desafios do futuro. Ao criar um espaço onde o aprendizado é prazeroso e significativo,
+                    estamos a contribuir para a formação de indivíduos críticos, criativos e conscientes do seu papel na sociedade.
                 </p>
                 </p>
-                <a href="link_para_pagina_de_inscricoes" class="btn btn-primary inscription-button">Fazer inscrição</a>
+                <a asp-controller="SubscricaosSimulador" asp-action="Index" class="btn btn-primary inscription-button">Subscrições</a>
             </div>
             <div class="col-md-6">
                 <div class="map-image">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3109.778414190658!2d-9.196425323632818!3d38.79171385293234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecd558ba667c1%3A0x488b24edb1973513!2sAcademia%20dos%20Peixinhos%20-%20Creche%20e%20Jardim%20de%20Inf%C3%A2ncia!5e0!3m2!1spt-PT!2ses!4v1712781926240!5m2!1spt-PT!2ses" width="550" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+            </div>
         </div>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-md-start">
-                    <h6>Contacto</h6>
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-md-start">
+                        <h6>Contacto</h6>
                         geral@academiadospeixinhos.pt
-                </div>
-                <div class="col-md-4 text-md-center">
-                    <h6>Funcionamento</h6>
-                    Segunda - Sexta<br />
-                    07:30 - 19:00
-                    <div>
-                        <a href="politica-de-privacidade" class="text-muted">Política de Privacidade</a>
                     </div>
-                </div>
-                <div class="col-md-4 text-md-end">
-                    <h6>Localização</h6>
+                    <div class="col-md-4 text-md-center">
+                        <h6>Funcionamento</h6>
+                        Segunda - Sexta<br />
+                        07:30 - 19:00
+                        <div>
+                            <a href="politica-de-privacidade" class="text-muted">Política de Privacidade</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <h6>Localização</h6>
                         Av. Magalhães Coutinho Nº 11 - A
                         Urb. Colinas do Cruzeiro<br />
                         2675-654 Odivelas
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
